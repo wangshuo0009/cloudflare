@@ -1,9 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>简单网页</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <title>wangshuo</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .content {
+            display: none; /* 初始状态隐藏内容 */
+            text-align: center; /* 确保内容居中 */
+        }
+        p {
+            font-size: 50px;
+            font-weight: bold;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: rainbow 5s linear infinite;
+            margin: 20px 0 0 0;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        a:hover, a:active, a:visited {
+            color: #fff;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+            font-size: 12px;
+            color: #ccc;
+        }
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        /* 手机设备 */
+        @media only screen and (max-width: 768px) {
+            body {
+                background-image: url('./images/紫色女.jpeg');
+            }
+        }
+        /* 平板和电脑设备 */
+        @media only screen and (min-width: 769px) {
+            body {
+                background-image: url('./images/wallhaven-l8pvxp.jpg');
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elementsVisible = false; // 初始状态为隐藏
+
+            // 点击事件处理程序
+            function handleClick() {
+                var contentDiv = document.getElementById('contentDiv');
+
+                if (!elementsVisible) {
+                    contentDiv.style.display = 'block';
+                } else {
+                    contentDiv.style.display = 'none';
+                }
+
+                elementsVisible = !elementsVisible; // 切换状态
+            }
+
+            // 添加点击事件监听器
+            document.body.addEventListener('click', handleClick);
+        });
+    </script>
 </head>
 <body>
-    <p>这是一个只有一行文字的网页。</p>
+<div id="contentDiv" class="content">
+
+    <p>恭喜你居然找到我了小宝贝。</p>
+    <img src="./images/kisskiss.JPG" alt="卧槽，我图片呢？">
+</div>
+<footer>
+    <a href="https://wangshuos.com" target="_blank">&copy; 2024 wangshuo. 保留所有权利.</a>
+</footer>
 </body>
 </html>
