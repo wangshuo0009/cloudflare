@@ -6,8 +6,8 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <title>wangshuo</title>
     <!-- 添加网页图标 -->
-    <link rel="icon" href="./images/露娜cos.jpeg" type="image/jpeg">
-    <link rel="shortcut icon" href="./images/露娜cos.jpeg" type="image/jpeg">
+    <link rel="icon" href="images/phone/露娜cos.jpeg" type="image/jpeg">
+    <link rel="shortcut icon" href="images/phone/露娜cos.jpeg" type="image/jpeg">
     <style>
         body {
             display: flex;
@@ -83,7 +83,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             var elementsVisible = false; // 初始状态为隐藏
             // 手机设备随机背景图片
-            var images = ['./images/紫色女.jpeg', './images/露娜cos.jpeg', './images/jk女.jpeg']; // 替换为你的图片路径
+            var images = [
+                './images/phone/紫色女.jpeg',
+                './images/phone/露娜cos.jpeg',
+                './images/phone/jk女.jpeg',
+                './images/phone/包臀女.jpeg'
+                // 添加更多图片路径
+
+            ]; // 替换为你的图片路径
             var currentImageIndex = Math.floor(Math.random() * images.length);
             if (window.innerWidth <= 768) {
                 document.body.style.backgroundImage = 'url(' + images[currentImageIndex] + ')';
