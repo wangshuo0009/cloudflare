@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <title>wangshuo</title>
+    <!-- 添加网页图标 -->
+    <link rel="icon" href="./images/露娜cos.jpeg" type="image/jpeg">
+    <link rel="shortcut icon" href="./images/露娜cos.jpeg" type="image/jpeg">
     <style>
         body {
             display: flex;
@@ -64,7 +67,9 @@
         /* 手机设备 */
         @media only screen and (max-width: 768px) {
             body {
-                background-image: url('./images/紫色女.jpeg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
             }
         }
         /* 平板和电脑设备 */
@@ -77,6 +82,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var elementsVisible = false; // 初始状态为隐藏
+            // 手机设备随机背景图片
+            var images = ['./images/紫色女.jpeg', './images/露娜cos.jpeg', './images/jk女.jpeg']; // 替换为你的图片路径
+            var currentImageIndex = Math.floor(Math.random() * images.length);
+            if (window.innerWidth <= 768) {
+                document.body.style.backgroundImage = 'url(' + images[currentImageIndex] + ')';
+            }
 
             // 点击事件处理程序
             function handleClick() {
@@ -91,8 +102,19 @@
                 elementsVisible = !elementsVisible; // 切换状态
             }
 
+            // 双击事件处理程序
+            function handleDoubleClick() {
+                if (window.innerWidth <= 768) {
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    document.body.style.backgroundImage = 'url(' + images[currentImageIndex] + ')';
+                }
+            }
+
             // 添加点击事件监听器
             document.body.addEventListener('click', handleClick);
+
+            // 添加双击事件监听器
+            document.body.addEventListener('dblclick', handleDoubleClick);
         });
     </script>
 </head>
